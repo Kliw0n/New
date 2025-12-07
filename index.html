@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitip.in | Penitipan Barang Aman & Terpercaya</title>
+    <meta name="description" content="Nitip.in menyediakan layanan penitipan dan angkut barang yang aman dan terpercaya untuk mahasiswa dan umum.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .hero {
+            background: linear-gradient(to right, #007bff, #28a745);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .form-section {
+            padding: 50px 0;
+            background: white;
+        }
+        .layanan-section, .tentang-section, .kontak-section {
+            padding: 50px 0;
+            background: #f8f9fa;
+        }
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+        }
+        .image-preview {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nitip.in</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Selamat Datang di Nitip.in</h1>
+            <p class="lead">Layanan penitipan dan angkut barang aman, terpercaya, dan cepat untuk mahasiswa dan umum.</p>
+            <a href="#pesan" class="btn btn-light btn-lg">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="pesan" class="form-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="text-center mb-4">Pemesanan Layanan</h2>
+                    <p class="text-center mb-4">Isi form di bawah, tim kami akan hubungi via WhatsApp dalam 1x24 jam!</p>
+                    <form id="orderForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama Lengkap *</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="whatsapp" class="form-label">Nomor WhatsApp *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">🇮🇩 +62</span>
+                                <input type="tel" class="form-control" id="whatsapp" placeholder="8123456789" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Pilih Layanan *</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Penitipan Barang" id="service1">
+                                <label class="form-check-label" for="service1">Penitipan Barang Elektronik</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Angkut Barang" id="service2">
+                                <label class="form-check-label" for="service2">Penitipan Barang Non-Elektronik</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Gudang Sewa" id="service3">
+                                <label class="form-check-label" for="service3">Penitipan Kendaraan</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Durasi *</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Penitipan Barang" id="service1">
+                                <label class="form-check-label" for="service1">Harian</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Angkut Barang" id="service2">
+                                <label class="form-check-label" for="service2">Mingguan</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Gudang Sewa" id="service3">
+                                <label class="form-check-label" for="service3">Bulanan</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemImage" class="form-label">Upload Gambar Barang (Opsional)</label>
+                            <input type="file" class="form-control" id="itemImage" accept="image/*">
+                            <small class="form-text text-muted">Upload gambar barang untuk membantu kami memahami item Anda (maksimal 5MB, format JPG/PNG).</small>
+                            <img id="imagePreview" class="image-preview" style="display: none;" alt="Preview Gambar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan Tambahan (Opsional)</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kirim & Cek Harga</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="layanan-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Layanan Kami</h2>
+            <p class="text-center mb-5">Nitip.in menyediakan solusi penitipan kendaraan dan barang pribadi secara aman, praktis, dan transparan.</p>
+            
+            <h3>Layanan Utama</h3>
+            <ul class="mb-4">
+                <li>Penitipan barang elektronik dan non-elektronik</li>
+                <li>Penitipan kendaraan roda dua</li>
+                <li>Layanan penjemputan barang (pick up)</li>
+                <li>Sistem sewa fleksibel (harian, mingguan, bulanan)</li>
+            </ul>
+            
+            <h3>Kategori Barang</h3>
+            <p>Barang yang dititipkan dibagi menjadi tiga kategori utama: Non Elektronik - Pecah Belah (Cermin kecil, toples kaca, piring, gelas), Non Elektronik - Non Pecah Belah (Lemari plastik, koper, box storage, kipas angin standar, tas, sepatu), Elektronik (Laptop, HP, tablet, rice cooker, panci listrik, printer, kamera dan lensa), dan Kendaraan (Motor 110 - 800 cc).</p>
+            
+            <h3>Kategori Berdasarkan Berat</h3>
+            <ul class="mb-4">
+                <li>Kategori I: Berat ≤5kg</li>
+                <li>Kategori II: Berat >5 – 15 kg</li>
+                <li>Kategori III: Berat >15kg – 30 kg</li>
+            </ul>
+            
+            <h3>Tarif Penitipan Barang</h3>
+            <h4>Non Elektronik → Non Pecah Belah</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Kategori Barang</th>
+                            <th>Durasi Harian</th>
+                            <th>Durasi Mingguan</th>
+                            <th>Durasi Bulanan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kategori I</td><td>Rp10.000</td><td>Rp65.000</td><td>Rp200.000</td></tr>
+                        <tr><td>Kategori II</td><td>Rp20.000</td><td>Rp125.000</td><td>Rp400.000</td></tr>
+                        <tr><td>Kategori III</td><td>Rp40.000</td><td>Rp250.000</td><td>Rp800.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4>Non Elektronik → Pecah Belah</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Kategori Barang</th>
+                            <th>Durasi Harian</th>
+                            <th>Durasi Mingguan</th>
+                            <th>Durasi Bulanan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kategori I</td><td>Rp15.000</td><td>Rp95.000</td><td>Rp350.000</td></tr>
+                        <tr><td>Kategori II</td><td>Rp25.000</td><td>Rp155.000</td><td>Rp550.000</td></tr>
+                        <tr><td>Kategori III</td><td>Rp50.000</td><td>Rp325.000</td><td>Rp1.200.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4>Elektronik</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Kategori Barang</th>
+                            <th>Durasi Harian</th>
+                            <th>Durasi Mingguan</th>
+                            <th>Durasi Bulanan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kategori I</td><td>Rp30.000</td><td>Rp195.000</td><td>Rp750.000</td></tr>
+                        <tr><td>Kategori II</td><td>Rp50.000</td><td>Rp315.000</td><td>Rp1.100.000</td></tr>
+                        <tr><td>Kategori III</td><td>Rp100.000</td><td>Rp625.000</td><td>Rp2.350.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>Penitipan Motor</h3>
+            <p>Kategori I: Motor dengan kapasitas ≤250cc, Kategori II: Motor dengan kapasitas >250cc (Maksimal 800cc).</p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Kategori Barang</th>
+                            <th>Durasi Harian</th>
+                            <th>Durasi Mingguan</th>
+                            <th>Durasi Bulanan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kategori I</td><td>Rp10.000</td><td>Rp65.000</td><td>Rp225.000</td></tr>
+                        <tr><td>Kategori II</td><td>Rp20.000</td><td>Rp130.000</td><td>Rp470.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="tentang" class="tentang-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Tentang Nitip.in</h2>
+            <p class="text-center">Nitip.in merupakan layanan digital berbasis web yang menyediakan solusi penitipan kendaraan dan barang pribadi secara aman, praktis, dan transparan. Kami berkomitmen untuk memberikan pengalaman terbaik bagi pelanggan dengan layanan yang fleksibel dan terpercaya.</p>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="kontak-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Kontak Kami</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Informasi Kontak</h4>
+                    <p><strong>WhatsApp:</strong> +62 812-3456-7890</p>
+                    <p><strong>Email:</strong> info@nitip.in</p>
+                    <p><strong>Alamat:</strong> Yogyakarta, Indonesia</p>
+                    <p><strong>Jam Operasional:</strong> Senin - Minggu, 08:00 - 20:00 WIB</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Kirim Pesan</h4>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Nama *</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Pesan *</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Nitip.in. Semua hak dilindungi. Hubungi: +62 812-3456-7890 | Email: info@nitip.in</p>
+            <p>Ikuti kami di <a href="#" class="text-light">Instagram</a></p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6281234567890?text=Hai%20Nitip.in,%20saya%20mau%20cek%20harga%20penitipan%20barang" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp" style="color: white; font-size: 24px;"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Validasi WhatsApp
+        document.getElementById('whatsapp').addEventListener('input', function() {
+            let value = this.value.replace(/[^0-9]/g, '');
+            if (value.startsWith('0')) value = value.substring(1);
+            if (!value.startsWith('8')) value = '8' + value;
+            if (value.length > 15) value = value.substring(0, 15);
+            this.value = value;
+        });
+
+        // Preview Gambar
+        document.getElementById('itemImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const preview = document.getElementById('imagePreview');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+            }
+        });
+
+        // Submit Form (Simulasi kirim ke WhatsApp)
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const services = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value).join(', ');
+            const message = document.getElementById('message').value;
+            const imageFile = document.getElementById('itemImage').files[0];
+
+            if (!name || !whatsapp || !services) {
+                alert('Harap isi semua field wajib!');
+                return;
+            }
+
+            let fullMessage = `Hai Nitip.in, saya ${name} ingin cek harga untuk layanan: ${services}. Pesan tambahan: ${message}`;
+            if (imageFile) {
+                fullMessage += ' (Gambar barang dilampirkan)';
+            }
+
+            const url = `https://wa.me/6281234567890?text=${encodeURIComponent(fullMessage)}`;
+            window.open(url, '_blank');
+            alert('Form dikirim! Kami akan hubungi via WhatsApp.');
+        });
+
+        // Submit Form Kontak (Simulasi kirim ke WhatsApp)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+
+            if (!name || !email || !message) {
+                alert('
